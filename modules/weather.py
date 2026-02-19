@@ -91,7 +91,16 @@ def format_degrees(num: int) -> str:
 def format_city_name(city: str) -> str:
     if not city or len(city) < 2:
         return city
-    return city + "е" if city[-1] != "и" else city
+
+    last_letter = city[-1]
+
+    if last_letter == "и":
+        return city
+
+    elif last_letter == "а":
+        return city[:-1] + "е"
+
+    return city + "е"
 
 
 def format_temperature_text(
