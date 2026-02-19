@@ -74,12 +74,12 @@ translate_dict = {
 
 
 def format_degrees(num: int) -> str:
+    num = abs(num)
     last_digit = num % 10
     last_two_digits = num % 100
 
     if 11 <= last_two_digits <= 14:
         return "градусов"
-
     if last_digit == 1:
         return "градус"
     if 2 <= last_digit <= 4:
@@ -96,7 +96,6 @@ def format_city_name(city: str) -> str:
 
     if last_letter == "и":
         return city
-
     elif last_letter == "а":
         return city[:-1] + "е"
 
@@ -158,4 +157,4 @@ def get_weather(city: str = DEFAULT_CITY) -> str:
         return f"Ошибка обработки данных: {e}"
 
 
-print(get_weather())
+print(get_weather("Магнитогорск"))
