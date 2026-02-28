@@ -1,7 +1,7 @@
 import requests
 from num2words import num2words
 
-from config import OPENWEATHER_API_KEY
+from .config import OPENWEATHER_API_KEY
 
 DEFAULT_CITY = "Москва"
 REQUEST_TIMEOUT = 5
